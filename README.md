@@ -25,7 +25,7 @@ First commit: **2026-06-04 17:45 UTC.**
 - **Upstream licence:** Apache-2.0
 - **Our relationship:** Fork-and-extend. Upstream codebase is consumed verbatim under its original licence; our additions sit on top under CC BY 4.0.
 
-The merge discipline that governs how this repository absorbs upstream changes is documented in [`UPSTREAM-MERGE-DISCIPLINE.md`](UPSTREAM-MERGE-DISCIPLINE.md).
+The merge discipline that governs how this repository absorbs upstream changes is documented in [`UPSTREAM-MERGE-DISCIPLINE.md`](https://git.unitek-systems.com/UniCORE/UniSaaS.UniCORE.Apache/src/branch/main/UPSTREAM-MERGE-DISCIPLINE.md) (mirror: [GitHub](https://github.com/bryanunitek/UniSaaS.UniCORE.Apache/blob/main/UPSTREAM-MERGE-DISCIPLINE.md)).
 
 ---
 
@@ -48,17 +48,17 @@ UniCORE.Apache is published as a **four-repo family**:
 
 ## Status
 
-**SCAFFOLD-ANCHOR** as of 2026-06-04. See [`STATUS.md`](STATUS.md) for the full status breakdown.
+**SCAFFOLD-ANCHOR** as of 2026-06-04. See [`STATUS.md`](https://git.unitek-systems.com/UniCORE/UniSaaS.UniCORE.Apache/src/branch/main/STATUS.md) (mirror: [GitHub](https://github.com/bryanunitek/UniSaaS.UniCORE.Apache/blob/main/STATUS.md)) for the full status breakdown.
 
 ---
 
 ## Files in this scaffold commit
 
-- [`README.md`](README.md) — this file
-- [`LICENSE.md`](LICENSE.md) — UniCORE additions licence
-- [`STATUS.md`](STATUS.md) — scaffold-anchor status
-- [`UPSTREAM-MERGE-DISCIPLINE.md`](UPSTREAM-MERGE-DISCIPLINE.md) — canonical merge discipline
-- [`AI-AUTHORSHIP.md`](AI-AUTHORSHIP.md) — AI authorship disclosure
+- [`README.md`](https://git.unitek-systems.com/UniCORE/UniSaaS.UniCORE.Apache/src/branch/main/README.md) (mirror: [GitHub](https://github.com/bryanunitek/UniSaaS.UniCORE.Apache/blob/main/README.md)) — this file
+- [`LICENSE.md`](https://git.unitek-systems.com/UniCORE/UniSaaS.UniCORE.Apache/src/branch/main/LICENSE.md) (mirror: [GitHub](https://github.com/bryanunitek/UniSaaS.UniCORE.Apache/blob/main/LICENSE.md)) — UniCORE additions licence
+- [`STATUS.md`](https://git.unitek-systems.com/UniCORE/UniSaaS.UniCORE.Apache/src/branch/main/STATUS.md) (mirror: [GitHub](https://github.com/bryanunitek/UniSaaS.UniCORE.Apache/blob/main/STATUS.md)) — scaffold-anchor status
+- [`UPSTREAM-MERGE-DISCIPLINE.md`](https://git.unitek-systems.com/UniCORE/UniSaaS.UniCORE.Apache/src/branch/main/UPSTREAM-MERGE-DISCIPLINE.md) (mirror: [GitHub](https://github.com/bryanunitek/UniSaaS.UniCORE.Apache/blob/main/UPSTREAM-MERGE-DISCIPLINE.md)) — canonical merge discipline
+- [`AI-AUTHORSHIP.md`](https://git.unitek-systems.com/UniCORE/UniSaaS.UniCORE.Apache/src/branch/main/AI-AUTHORSHIP.md) (mirror: [GitHub](https://github.com/bryanunitek/UniSaaS.UniCORE.Apache/blob/main/AI-AUTHORSHIP.md)) — AI authorship disclosure
 
 ---
 
