@@ -29,7 +29,8 @@ Release history:
     [NOTE that x.{odd}.z versions are strictly Alpha/Beta releases,
           while x.{even}.z versions are Stable/GA releases.]
 
-    2.4.68  : In development
+    2.4.69  : In development
+    2.4.68  : Released on June 08, 2026
     2.4.67  : Released on May 04, 2026
     2.4.66  : Released on December 04, 2025
     2.4.65  : Released on July 23, 2025
@@ -149,11 +150,11 @@ CURRENT RELEASE NOTES:
     . mod_proxy_http2
     . mod_md
     . documentation
-    . non-Unix build
+    . non-Unix build, and cmake-based build
     . non-Unix, single-platform code
     . routine APLOGNO() backports
     . .gdbinit
-    . CI configuration and scripts
+    . Tests, CI configuration and scripts
     . mod_tls
 
 RELEASE SHOWSTOPPERS:
@@ -162,28 +163,45 @@ RELEASE SHOWSTOPPERS:
 PATCHES ACCEPTED TO BACKPORT FROM TRUNK:
   [ start all new proposals below, under PATCHES PROPOSED. ]
 
+
 ------------------------------------------------------------------------
 
 PATCHES PROPOSED TO BACKPORT FROM TRUNK:
   [ New proposals should be added at the end of the list ]
 
-  *) test/h2: ignore AH02430 for the whole TestRfc9113 class.
-     trunk patch: http://svn.apache.org/r1934891
-     2.4.x patch: svn merge -c 1934891 ^/httpd/httpd/trunk .
-     +1: jim,
+  *) mod_proxy_beacon: Add new module. Reverse-proxy UDP member
+     announcement -- backends self-register as balancer members over UDP.
+     trunk patch: https://svn.apache.org/r1934995
+                  https://svn.apache.org/r1935040
+                  https://svn.apache.org/r1935556
+     2.4.x patch: https://gist.github.com/jimjag/57b53171761dc1fa074de7aa4e9b979c
+     +1: jim, 
 
-  *) mod_md: change types of fields of ocsp_summary_ctx_t
-     More info in the trunk commit message.
-     Already part of mod_md upstream repos.
-     trunk patch: https://svn.apache.org/1930710
-     2.4.x patch: svn merge -c 1930710 ^/httpd/httpd/trunk .
-     +1: rjung, jorton, 
+  *) mpm_motorz: Add the MotorZ MPM to 2.4.x as a self-contained port
+     (multi-poller scale-out with new PollersPerChild directive, async
+     keep-alive/HTTP/2 handoff, concurrency hardening, motorz test suite).
+     trunk patch: https://svn.apache.org/r1934868
+     2.4.x patch: https://gist.github.com/jimjag/a93acf3e1a90689c2d1aa0c178a7dabf
+     +1: jim, 
 
-  *) modules/ssl/ssl_engine_vars.c (ssl_var_lookup_ssl_cert_remain):
-     Fix off-by-one in tm_mday calculation, identified by Gemini.
-     trunk patch: https://svn.apache.org/1931420
-     2.4.x patch: svn merge -c 1931420 ^/httpd/httpd/trunk .
-     +1: rjung, jorton, 
+  *) mod_systemd: Add watchdog support, send STOPPING=1 on shutdown and
+     MONOTONIC_USEC on reload, fix graceful restart with socket
+     activation and the status line; add a systemd test suite.
+     trunk patch: https://svn.apache.org/r1909769
+                  https://svn.apache.org/r1928356
+                  https://svn.apache.org/r1937596
+                  https://svn.apache.org/r1937597
+                  https://svn.apache.org/r1937598
+                  https://svn.apache.org/r1937599
+                  https://svn.apache.org/r1937600
+                  https://svn.apache.org/r1937601
+                  https://svn.apache.org/r1937602
+                  https://svn.apache.org/r1937635
+                  https://svn.apache.org/r1937644
+                  https://svn.apache.org/r1937646
+                  https://svn.apache.org/r1937647
+     2.4.x patch: https://github.com/apache/httpd/pull/773.patch
+     +1: jorton,
 
 PATCHES/ISSUES THAT ARE BEING WORKED
   [ New entries should be added at the START of the list ]

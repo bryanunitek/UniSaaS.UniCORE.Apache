@@ -117,16 +117,6 @@ if ! test -v SKIP_TESTING -o -v NO_TEST_FRAMEWORK; then
 
     # Cache the perl -V output for future verification.
     mv perlver ~/perl5/.perlver
-
-    # Make a shallow clone of httpd-tests git repo.
-    git clone -q --depth=1 https://github.com/apache/httpd-tests.git test/perl-framework
-
-    # For OpenSSL 3.2+ testing, Apache::Test r1916067 is required, so
-    # use a checkout of trunk until there is an updated CPAN release
-    # with that revision.
-    if test -v TEST_OPENSSL3; then
-       svn co -q https://svn.apache.org/repos/asf/perl/Apache-Test/trunk test/perl-framework/Apache-Test
-    fi
 fi
 
 # For LDAP testing, run slapd listening on port 8389 and populate the
@@ -220,4 +210,9 @@ if test -v TEST_MOD_TLS -a -v RUSTLS_VERSION; then
             make install DESTDIR="$HOME/root/rustls"
         popd
     fi
+fi
+
+if test -v PHP_FPM -a ! -v SKIP_TESTING; then
+    # Sanity test the php-fpm executable exists.
+    $PHP_FPM --version || exit 1
 fi

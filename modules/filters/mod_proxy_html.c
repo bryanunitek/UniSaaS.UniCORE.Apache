@@ -309,7 +309,6 @@ static void pcomment(void *ctxt, const xmlChar *uchars)
         ap_fputs(ctx->f->next, ctx->bb, "<!--");
         AP_fwrite(ctx, chars, strlen(chars), 1);
         ap_fputs(ctx->f->next, ctx->bb, "-->");
-        dump_content(ctx);
     }
 }
 static void pendElement(void *ctxt, const xmlChar *uname)
@@ -1304,7 +1303,7 @@ static void proxy_html_insert(request_rec *r)
 }
 static void proxy_html_hooks(apr_pool_t *p)
 {
-    static const char *aszSucc[] = { "mod_filter.c", NULL };
+    static const char *const aszSucc[] = { "mod_filter.c", NULL };
     ap_register_output_filter_protocol("proxy-html", proxy_html_filter,
                                        NULL, AP_FTYPE_RESOURCE,
                           AP_FILTER_PROTO_CHANGE|AP_FILTER_PROTO_CHANGE_LENGTH);
